@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head id= "myHead">
+<meta charset="UTF-8">
+<title>03-05 : document 객체의 주요 프로퍼터</title>
+<script>
+	var text = "문서 로딩중일때 readyState = " + document.readyState + "\n";
+</script>
+</head>
+<body style = "background-color:yellow; color:blue; direction:rtl"
+onload = "printProperties()">
+<h3>document의 주요 프로퍼터</h3>
+<hr>
+<a href="http://www.naver.com">네이버 홈페이지</a>
+<div>이곳은 div영역</div>
+<input id="input" type="type" value="여기 포커스가 있습니다.">
+
+<script>
+function printProperties(){
+	document.getElementById("input").focus(); // 인풋 태그에 포커스 줌
+	
+	text+= "1.location =" + document.location + "\n";
+	text+= "1.url =" + document.URL + "\n";
+	text+= "1.title =" + document.title + "\n";
+	text+= "1.head의 id =" + document.head.id + "\n";
+	text+= "1.body의 color =" + document.body.style.color + "\n";
+	text+= "1.domain =" + document.domain + "\n";
+	text+= "1.lastModified =" + document.lastModified + "\n";
+	text+= "1.defaultView =" + document.defaultView + "\n";
+	text+= "1.문서의 로드 완료 후 readyState =" + document.readyState + "\n";
+	text+= "1.referrer =" + document.referrer + "\n";
+	text+= "1.activeElement =" + document.activeElement.value + "\n";
+	text+= "1.documentElement의 태그 이름 =" + document.documentElement.tagName + "\n";
+alert(text);
+}
+
+</script>
+</body>
+</html>

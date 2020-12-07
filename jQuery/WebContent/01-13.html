@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script>
+	$(document).ready(function(){
+		$('div h1').css('color','orange'); // 띄어쓰기는 후손 선택자
+	});
+</script>
+</head>
+<body>
+<div>
+	<ul>
+		<li><h1>div의 후손(h1)</h1></li>
+		<li>div의 후손</li>
+		<li>div의 후손</li>
+		<li>div의 후손</li>
+	</ul>
+	<h1>div의 자손</h1>
+</div>
+</body>
+</html>

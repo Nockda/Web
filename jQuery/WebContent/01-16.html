@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script>
+	$(document).ready(function(){
+		$('tr:odd').css('background', '#f9f9f9');
+		$('tr:even').css('background', '#9f9f9f');
+		$('tr:first').css('background', '#000000').css('color','#ffffff');
+	});
+</script>
+</head>
+<body>
+	<table>
+	<tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+	<tr><th>강민수</th><th>A</th><th>서울시 강동구</th></tr>
+	<tr><th>김지연</th><th>B</th><th>서울시 노원구</th></tr>
+	<tr><th>남기주</th><th>AB</th><th>미국 노스케롤라이나</th></tr>
+	<tr><th>서민주</th><th>O</th><th>일본 도쿄</th></tr>
+	<tr><th>한기주</th><th>AB</th><th>중국 상해</th></tr>
+	</table>
+</body>
+</html>

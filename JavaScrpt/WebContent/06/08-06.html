@@ -1,0 +1,43 @@
+<!DOCTYPEhtml>
+<html>
+<head><title>08-06:watch Position()으로반ࠀ위치서비스</title></head>
+<body>
+<h3>watch Position()으로반ࠀ위치서비스</h3>
+<hr>
+<div id="msg">이곳에위치정보출력</div>
+<div id="map"></div>
+<script>
+if(!navigator.geolocation)
+alert("지원하지않음");
+else{
+var options={//3개의값을가진전역객체.watchPosition()의마지막매개변수로전달
+enableHighAccuracy:false,
+timeout:5000,
+maximumAge:0};
+var img=new Image();
+var count=0;
+var watchID;
+//changed()콜백함수등록하고,반ࠀ된위치서비스를시작시킨다.
+watchID=navigator.geolocation.watchPosition(changed,null,options);
+}
+//위치가바뀌면changed()가호출되고,위치정߿가들어있는position객체가매개변수로넘어온다.
+function changed(position){
+if(count==5){//clearWatch()테스트를위해5번만서비스
+navigator.geolocation.clearWatch(watchID);//반ࠀ서비스종료
+document.getElementById("msg").innerHTML="위치서비스종료";
+return;
+}
+var lat=position.coords.latitude;//변경된위도
+var lon=position.coords.longitude//변경된경도
+var text=count+":(위도"+lat+"°,경도"+lon+"°)로변경됨<br>";
+document.getElementById("msg").innerHTML=text;//위치정߿출력
+//지도이미지갱신
+img.src="https://maps.googleapis.com/maps/api/staticmap?center="+lat
+ +","+lon
++"&zoom=13&size=400x300&sensor=false&markers=color:red%7Clabel:C%7C"
++lat+","+lon;
+if(count==0)//처음이면구글지도이미지부착
+document.getElementById("map").appendChild(img);//지도이미지부착
+count++;//갱신회수증가
+}
+</script></body></html>
