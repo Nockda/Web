@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.high_light {
+	background: yellow;
+}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script>
+	// 플러그인 간 충돌을 제거하기 위해 $를 J로 변경
+	$.noConflict();
+	var J = jQuery;
+
+	//jQuery사용
+	J(document).ready(function() {
+		alert("111");
+		J('h1').removeClass('high_light');
+	});
+</script>
+</head>
+<body>
+	<h1 class="high_light">item-0</h1>
+	<h1 class="high_light">item-1</h1>
+</body>
+</html>

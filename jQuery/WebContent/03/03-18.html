@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script>
+	$(document).ready(function(){
+		$('h1').html(function(index,html) {
+			return '*' + html + '*';
+		});
+	});
+	
+	
+	// 화면에 이 뒤에거를 쓰려면 < 는 &lt, > 는 &gt, 띄어쓰기는 &nbsp
+</script>
+</head>
+<body>
+<h1>header-0</h1>
+<h1>header-1</h1>
+<h1>header-2</h1>
+</body>
+</html>

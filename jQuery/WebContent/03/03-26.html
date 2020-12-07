@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script>
+$(document).ready(function(){
+	var content = [
+		{name:'홍길동', region:'서울시 강남구'},
+		{name:'전우치', region:'서울시 강동구'},
+		{name:'손온공', region:'서울시 송파구'}
+		
+	];
+		
+	// 문서 객체 추가
+	$('div').append(function(index){
+		var item = content[index];
+		
+		var output = '';
+		output += '<h1>' + item.name +'</h1>';
+		output += '<h3>' + item.region +'</h3>';
+		return output;
+	});
+});
+
+	
+</script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
