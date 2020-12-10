@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery-1.7.js'></script>
+<script>
+	$(document).ready(function() {
+		var num=0;
+		$(window).scroll(function(){
+			var scrollHeight = $(window).scrollTop() + $(window).height();
+			var documentHeight = $(document).height();
+			if(Math.round(scrollHeight) == Math.round(documentHeight)){
+				num++;
+				for(var i = 0; i<20; i++){
+					$('<h1>Infinity Scroll'+num+'</h1>)').appendTo('body');
+				}
+			}	
+		});			
+			for(var i = 0; i<20; i++){
+				$('<h1>Infinity Scroll</h1>)').appendTo('body');
+			}
+
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

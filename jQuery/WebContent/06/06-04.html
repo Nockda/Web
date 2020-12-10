@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<script>
+	var request = new XMLHttpRequest();
+	//XMLHttpRequest 객체를 생성
+	request.open('GET', 'http://localhost:8081/mytest/data.html',false);
+	
+	//Ajax수행
+	var prevDate = new Date();
+	request.send();
+	var nowDate = new Date();
+	
+	//출력
+	document.body.innerHTML += request.responseText;
+	alert(nowDate-prevDate);
+	</script>
+</body>
+</html>

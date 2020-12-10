@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery-1.7.js'></script>
+<script>
+	$(document).ready(function() {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+
+	//이벤트 연결
+		$(canvas).toggle(function(event) {
+			//위치를 얻어냄
+			var position = $(this).offset();
+			var x = event.pageX - position.left;
+			var y = event.pageY - position.top;
+			// 선 그림
+			context.beginPath();
+			context.moveTo(x, y);
+		}, function(event) {
+			var position = $(this).offset();
+			var x = event.pageX - position.left;
+			var y = event.pageY - position.top;
+			//선그림
+			context.lineTo(x, y);
+			context.stroke();
+		});
+	});
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="1500" height="1300"></canvas>
+</body>
+</html>

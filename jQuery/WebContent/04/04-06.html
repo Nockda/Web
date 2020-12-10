@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery-1.7.js'></script>
+<script>
+	$(document).ready(function() {
+		//이벤트 연결
+		$('h1').click(function(){
+			$(this).html(function(index, html){
+				return html + '★';
+			});
+		});
+		//1초마다 두번째 함수실행
+		setInterval(function(){
+			$('h1').last().trigger('click');
+		},923);
+		//1.5초마다 첫번째 함수실행
+		setInterval(function(){
+			$('h1').first().trigger('click');
+		},1230);
+	});
+</script>
+</head>
+<body>
+	<h1>Start : </h1>
+	<h1>Start : </h1>
+</body>
+</html>

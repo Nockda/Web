@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<script>
+	var request = new XMLHttpRequest();
+	//XMLHttpRequest 객체를 생성
+	request.onreadystatechange = function(event){
+		if(request.readyState == 4){
+			if(request.status ==200){
+				var json=eval('(' + request.responseText + ')');
+			}
+		}
+	};
+	
+	request.open('GET', 'http://localhost:8081/mytest/data.json',true);
+	request.send();
+	</script>
+</body>
+</html>

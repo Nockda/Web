@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script>
+	$(document).ready(function () {
+		$('h1').toggle(function(){
+			$(this).next().hide('slow');
+		}, function() {
+			$(this).next().show('slow');
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Open & close</h1>
+	<div>
+		<h1>Lorem ipsum</h1>
+		<p>bla blah blah blah blah</p>
+	</div>
+	<h1>Open & close</h1>
+	<div>
+		<h1>lorem ipsum</h1>
+		<p>blah blah blah blah blah</p>
+	</div>
+</body>
+</html>

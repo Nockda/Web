@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<script>
+	var request = new XMLHttpRequest();
+	//XMLHttpRequest 객체를 생성
+	request.onreadystatechange = function(event){
+		if(request.readyState == 4){
+			document.body.innerHTML += request.responseText;
+		}
+	};
+	
+	request.open('GET', 'http://localhost:8081/mytest/data.html',true);
+	request.send();
+	</script>
+</body>
+</html>

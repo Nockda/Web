@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src='http://code.jquery.com/jquery.js'></script>
+<title>Insert title here</title>
+	<script>
+	$(document).ready(function(){
+		var data= {
+				name: 'HongGilDong',
+				region: 'seoul',
+		};
+		//출력
+		$('<h1></h1>').text($.param(data)).appendTo('body');
+	});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

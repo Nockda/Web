@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery-1.7.js'></script>
+<script>
+	$(document).ready(function() {
+		$('#all_check').change(function (event){
+			if(this.checked){
+				$('#check_item').children().attr('checked', true);
+			}else{
+				$('#check_item').children().attr('checked', false);
+			}
+		})
+	});
+</script>
+</head>
+<body>
+	<input type="checkbox" id="all_check"/>
+	<label>all</label>
+	<div id="check_item">
+		<input type ="checkbox"/>
+		<label>A option</label>
+		<input type ="checkbox"/>
+		<label>B option</label>
+		<input type ="checkbox"/>
+		<label>C option</label>
+	</div>
+</body>
+</html>

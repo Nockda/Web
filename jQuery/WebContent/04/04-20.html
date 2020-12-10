@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='http://code.jquery.com/jquery-1.7.js'></script>
+<script>
+	$(document).ready(function() {
+		$('textarea').keyup(function(){
+			//글자수 세기
+			var inputLength = $(this).val().length;
+			var remain = 20-inputLength;
+			
+			//문서 객체에 입력
+			$('h1').html(remain);
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>지금 내 생각을</p>
+		<h1>20자로 표현</h1>
+		<textarea cols="70" rows="5"></textarea>
+	</div>
+</body>
+</html>

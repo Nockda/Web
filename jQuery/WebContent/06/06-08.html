@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <script>
+	
+   var request = new XMLHttpRequest();   
+   request.onreadystatechange=function(event){
+      if(request.readyState==4){
+    	  if(request.status==200){
+              var json = eval('(' + request.responseText + ')');
+              var output ='';
+              
+              for(var i=0; i<json.length; i++){
+                 for (var key in json[i]){
+                    output+='<h1>' + i + ':'+json[i][key]+'</h1>';
+                 }
+              }
+              //출력합니다
+              document.body.innerHTML+=output;    		  
+    	  };
+      };
+   };
+   
+   request.open('GET','http://localhost:8081/mytest/data.json',true);
+   request.send();
+   
+   </script>
+</body>
+</html>
